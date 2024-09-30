@@ -1,0 +1,6 @@
+html,
+body {
+  font-family: "Playfair Display", serif;
+  @include StyleText($fs-1, $color-dark-1, $fw-1);
+  background-color: $color-white-1;
+}
