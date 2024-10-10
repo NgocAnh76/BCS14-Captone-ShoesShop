@@ -1,46 +1,47 @@
-body {
-  // background-color: $secondary;
-}
-.header_shoes {
-  .navbar {
+// header
+@import "./header";
+
+//search
+.shoe_search {
+  margin-top: 30px;
+  .search_input {
+    @include StyleText($fs-3, $primary, $fw-2);
+    border-radius: 30px;
+    border: 2px solid $primary;
+    transition: all 0.3s linear;
+    &:hover {
+      box-shadow: 0 0 5px 5px $primary;
+    }
+    &:focus {
+      box-shadow: 0 0 5px 5px $primary;
+    }
+  }
+  .button_search {
+    @include StyleText($fs-2, $primary, $fw-3);
     background-color: $secondary;
-  }
-  .navbar-brand {
-    @include StyleText($fs-6, $primary, $fw-3);
-  }
-  .nav-item {
-    .nav-link {
-      padding: 0 25px;
-      @include StyleText($fs-3, $primary, $fw-1);
-      transition: all 0.2s;
-      &::after {
-        content: "";
-        width: 100%;
-        height: 2px;
-        background-color: $color-hover;
-        display: block;
-        transition: all 0.3s;
-        //Trước hover
-        // (sacle(1) == 100%)
-        transform: scaleX(0);
-      }
-      &:hover {
-        color: $color-hover;
-        // Sau hover
-        &::after {
-          transform: scaleX(1);
-        }
-      }
-      //before( nằm ở trên phải chỉnh thêm position), after đặt ngay dưới dòng chữ
+    padding: 15px 35px;
+    border-radius: 30px;
+    margin-left: 40px;
+    border: none;
+    transition: all 0.3s linear;
+    &:hover {
+      background-color: $color-hover;
+      color: $secondary;
+    }
+    &:active {
+      box-shadow: 0 5px 0 0 #e3cac9;
+      transform: translateY(20px);
     }
   }
 }
+
 .carousel {
   .carousel-inner {
+    height: 500px;
     .carousel-item {
-      height: 600px;
       object-fit: cover;
       object-position: center;
+      height: 100%;
     }
   }
 }
@@ -61,68 +62,100 @@ body {
     gap: 40px;
   }
   .product_item {
-    box-shadow: 0 0 5px 10px $colorBox;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
     display: inline-block;
     .item_image {
       width: 100%;
       height: auto;
       object-fit: cover;
     }
-    a {
+
+    .item_content {
+      padding: 15px;
+    }
+    .img_full {
+      width: 100%;
+    }
+    .item_title {
+      @include StyleText($fs-4, $primary, $fw-1);
+    }
+    .item_icon {
+      color: $color-yellow-1;
+    }
+    .item_price {
+      @include StyleText($fs-4, $primary, $fw-1);
+    }
+    .item_button {
+      display: flex;
+      justify-content: space-between;
+    }
+    .item_buy {
+      text-align: center;
+      padding: 0 15px;
+      @include StyleText($fs-1, $primary, $fw-1);
+      border: none;
+      border-radius: 5px;
       text-decoration: none;
-      .item_content {
-        padding: 15px;
+      box-shadow: 0 0 5px 0 black;
+      &:active {
+        transform: translateY(3px);
       }
-      .img_full {
-        width: 100%;
+      &:hover {
+        background-color: $color-hover;
+        color: $secondary;
       }
-      .item_title {
-        @include StyleText($fs-4, $primary, $fw-1);
-      }
-      .item_icon {
-        color: $color-yellow-1;
-      }
-      .item_price {
-        @include StyleText($fs-4, $primary, $fw-1);
-      }
-      .item_button {
-        display: flex;
-        justify-content: space-between;
-      }
-      .item_buy {
-        padding: 0 15px;
-        @include StyleText($fs-8, $primary, $fw-1);
-        border: none;
-        box-shadow: 0 0 5px 0 black;
+    }
+
+    &:hover {
+      background-color: #88888850;
+      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+// footer
+@import "./footer";
+
+@media screen and (max-width: 1280px) {
+  .choes_product {
+    .product_item {
+      a {
+        .item_title {
+          font-size: 16px;
+        }
+        .item_buy {
+          font-size: 10px;
+        }
       }
     }
   }
 }
-footer {
-  background-color: $secondary;
-  margin-top: 20px;
-  .footer_list {
-    color: $color-hover;
-    display: flex;
-    padding: 50px;
-    .footer_item {
-      width: calc(100% / 3);
-      text-align: start;
-      h3 {
-        font-size: $fs-6;
-      }
-      .footer_content {
-        ul {
-          padding-left: 10px;
-          list-style: none;
-        }
-        a {
-          text-decoration: none;
-          color: $primary;
-          font-size: 20px;
-          &:hover {
-            color: $color-hover;
-          }
+
+@media screen and (max-width: 1023px) {
+  .carousel {
+    .carousel-inner {
+      height: 400px;
+    }
+  }
+  .choes_product {
+    .product_content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .carousel {
+    .carousel-inner {
+      height: 200px;
+    }
+  }
+  .choes_product {
+    .product_content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .product_item {
+      a {
+        .item_icon {
+          font-size: 10px;
         }
       }
     }

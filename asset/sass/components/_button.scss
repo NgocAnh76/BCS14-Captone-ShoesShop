@@ -1,0 +1,6 @@
+.button-pruduct_show {
+  background-color: #ccc;
+  border: none;
+  @include StyleText($fs-2, $secondary, $fw-1);
+  padding: 5px;
+}

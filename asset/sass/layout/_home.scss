@@ -1,12 +1,12 @@
-body {
+.home {
+  // display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-.home {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+
   a {
     text-decoration: none;
   }
@@ -16,6 +16,9 @@ body {
     text-align: center;
 
     .home_item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 20px auto;
       width: 250px;
       height: 250px;
@@ -28,12 +31,12 @@ body {
       &::after,
       &::before {
         content: "";
-        width: 250px;
+        width: 255px;
         height: 250px;
         position: absolute;
         border-radius: 80px;
         display: block;
-        z-index: -1;
+        // z-index: -1;
       }
     }
     .home_image {
@@ -77,39 +80,39 @@ body {
 @keyframes clockwise {
   0% {
     top: -5px;
-    left: 0;
+    right: 0;
   }
   12% {
     top: -2px;
-    left: 2px;
+    right: 2px;
   }
   25% {
     top: 0;
-    left: 5px;
+    right: 5px;
   }
   37% {
     top: 2px;
-    left: 2px;
+    right: 2px;
   }
   50% {
     top: 5px;
-    left: 0;
+    right: 0;
   }
   62% {
     top: 2px;
-    left: -2px;
+    right: -2px;
   }
   75% {
     top: 0;
-    left: -5px;
+    right: -5px;
   }
   87% {
     top: -2px;
-    left: -2px;
+    right: -2px;
   }
   100% {
     top: -5px;
-    left: 0;
+    right: 0;
   }
 }
 @keyframes counterclockwise {
