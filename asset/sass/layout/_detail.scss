@@ -1,0 +1,81 @@
+//header
+@import "./header";
+.product_show {
+  display: flex;
+  align-items: center;
+  .product_image {
+    width: 45%;
+    padding: 20px;
+    text-align: center;
+    object-fit: cover;
+    .image_full {
+      width: 90%;
+    }
+  }
+  .product_infor {
+    width: 65%;
+    .product_name {
+      @include StyleText($fs-7, $secondary, $fw-bold);
+    }
+    .product_desc {
+      @include StyleText($fs-2, $color-dark-1, $fw-1);
+    }
+    .product_size {
+      .size_title {
+        @include StyleText($fs-4, $secondary, $fw-3);
+      }
+      .size_item {
+        background-color: #ccc;
+        border: none;
+        @include StyleText($fs-2, $secondary, $fw-3);
+        padding: 5px 10px;
+        margin-right: 10px;
+        transition: all 0.3s;
+        &:hover,
+        &:focus {
+          background-color: #5e5e5e;
+        }
+      }
+    }
+    .product_price {
+      @include StyleText($fs-6, $primary, $fw-2);
+    }
+    .product_quantity {
+      .button_quantity {
+        background-color: $color-blue-4;
+        border: none;
+        @include StyleText($fs-3, $secondary, $fw-bold);
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        &:hover {
+          background-color: $color-blue-2;
+        }
+      }
+      .quantity {
+        @include StyleText($fs-5, $secondary, $fw-3);
+        margin: 15px;
+      }
+    }
+    .button_add {
+      @include StyleText($fs-4, $secondary, $fw-1);
+      padding: 5px 15px;
+      background-color: $primary;
+      border: none;
+      margin-top: 15px;
+      transition: all 0.3s;
+      &:hover {
+        background-color: $color-hover;
+      }
+    }
+  }
+}
+.product_realate {
+  .realate_title {
+    @include StyleText($fs-7, $secondary, $fw-3);
+    text-align: center;
+  }
+}
+
+//footer
+@import "./footer";

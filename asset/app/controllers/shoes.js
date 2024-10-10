@@ -1,4 +1,4 @@
-export class Phone {
+export class Shoes {
   constructor(
     name,
     alias,

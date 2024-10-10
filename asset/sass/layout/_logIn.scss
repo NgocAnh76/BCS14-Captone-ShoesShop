@@ -1,0 +1,40 @@
+.login {
+  text-align: center;
+  margin: 60px;
+  //   &_title {
+  //   }
+  &_item {
+    width: 50%;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid $color-border-input;
+    &:hover,
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 5px 2px $primary;
+    }
+  }
+  &_button {
+    margin-top: 50px;
+    padding: 10px 60px;
+    background-color: $primary;
+    border: none;
+    @include StyleText($fs-1, $secondary, $fw-3);
+    &:hover {
+      background-color: $color-hover;
+    }
+    &:active {
+      box-shadow: 0 0 5px 0 $primary;
+      transform: translateY(5px);
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .login {
+    &_item {
+      width: 100%;
+    }
+  }
+}
