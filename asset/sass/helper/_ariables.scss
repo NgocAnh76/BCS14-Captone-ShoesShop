@@ -18,8 +18,6 @@ $color-button: #ec94a9;
 $color-hover: #cf4763;
 $color-border-input: #b1b0b0;
 
-// color-text
-
 //font size
 $fs-1: 18px;
 $fs-2: 1.1rem;
@@ -39,6 +37,15 @@ $fw-bold: 700;
 //letter spacing
 $ls-1: 0.015rem;
 $ls-2: 0.03rem;
+
+//break points
+$breakpoints: (
+  // key : value
+  "extra-large": 1200px,
+  "large": 992px,
+  "medium": 768px,
+  "small": 576px
+);
 
 //dark color
 $color-dark-2: #121212;

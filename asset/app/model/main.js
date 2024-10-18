@@ -47,7 +47,7 @@ function showUI(arrShoes) {
 function autoPlayCaro() {
   const myCarousel = document.querySelector("#carouselExampleCaptions");
   const carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 1000,
+    interval: 2000,
     ride: "carousel",
     wrap: true,
   });

@@ -7,8 +7,8 @@
 //component
 @import "./components/button";
 //layout
-@import "./layout/home";
-@import "./layout/shoeShop"; // pages
-@import "./layout/detail";
-@import "./layout/register";
-@import "./layout/logIn";
+@import "./pages/home";
+@import "./pages/detail";
+@import "./pages/logIn";
+@import "./pages/register";
+@import "./pages/shoeShop";
