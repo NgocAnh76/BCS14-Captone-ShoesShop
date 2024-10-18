@@ -1,5 +1,5 @@
 // header
-@import "./header";
+@import "../layout/header";
 
 //search
 .shoe_search {
@@ -113,7 +113,7 @@
   }
 }
 // footer
-@import "./footer";
+@import "../layout/footer";
 
 @media screen and (max-width: 1280px) {
   .choes_product {
