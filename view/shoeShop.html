@@ -1,342 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>ShoeShop</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- link font Playfair  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <title>ShoeShop</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- font awesome  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- link font Playfair  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-    rel="stylesheet" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../asset/css/main.css" />
+  </head>
 
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../asset/css/main.css" />
-</head>
-
-<body>
-  <header class="header_shoes">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <!-- logo  -->
-        <a class="navbar-brand" href="../index.html">Shoes Shop</a>
-        <!-- toggle  -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./shoeShop.html">Home</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="./detail.html">Deitail</a>
-            </li> -->
-          </ul>
-          <div class="navbar_button">
-            <button class="button_item" type="button" data-bs-toggle="modal" data-bs-target="#cartModal">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span id="number_cart"> (0)</span>
-            </button>
-            <a href="./logIn.html" class="button_item">Log In</a>
-            <a href="./register.html" class="button_item"> Register </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section class="carousel container">
-      <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxpGa0gbq-XjOdW_EaTx9MmQKGcpRAdmQ6Bw&s"
-              class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://images.all-free-download.com/images/graphiclarge/sale_banner_templates_woman_fashion_accessories_icons_6835344.jpg"
-              class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src="../asset/img/carosel_03.jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../asset/img/carosel_04.jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../asset/img/carosel_05.jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
-    <section class="shoe_search">
-      <div class="container">
-        <form class="d-flex" role="search">
-          <input class="search_input form-control me-2" type="search" placeholder="Search" aria-label="Search"
-            id="valueSearch" />
-          <button class="button_search" type="button" onclick="search()">
-            Search
+  <body>
+    <header class="header_shoes">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <!-- logo  -->
+          <a class="navbar-brand" href="./shoeShop.html">Shoes Shop</a>
+          <!-- toggle  -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
-        </form>
-      </div>
-    </section>
-    <section class="choes_product">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0"></ul>
+            <div class="navbar_button">
+              <button
+                class="button_item"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#cartModal"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="number_cart"> (0)</span>
+              </button>
+              <a id="btnLogIn" href="./logIn.html" class="button_item"
+                >Log In</a
+              >
+              <a id="btnRegister" href="./register.html" class="button_item">
+                Register
+              </a>
+              <a
+                id="btnRemove"
+                class="button_item"
+                style="display: none"
+                onclick="logout()"
+              >
+                Remove
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="carousel container">
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxpGa0gbq-XjOdW_EaTx9MmQKGcpRAdmQ6Bw&s"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.all-free-download.com/images/graphiclarge/sale_banner_templates_woman_fashion_accessories_icons_6835344.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../asset/img/carosel_03.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../asset/img/carosel_04.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../asset/img/carosel_05.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <section class="shoe_search">
+        <div class="container">
+          <form class="d-flex" role="search">
+            <input
+              class="search_input form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="valueSearch"
+            />
+            <button class="button_search" type="button" onclick="search()">
+              Search
+            </button>
+          </form>
+        </div>
+      </section>
+      <section class="choes_product">
+        <div class="container">
+          <div class="product_title">
+            <h2>List Product</h2>
+          </div>
+          <div class="product_content">
+            <div class="product_item">
+              <a href="detail.html">
+                <div class="item_image">
+                  <img
+                    class="img_full"
+                    src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgjtFWXEfsWK1xlkb8z0W3RDon_rTvv2zcA&s"
+                    alt=""
+                  />
+                </div>
+                <div class="item_content">
+                  <h3 class="item_title">ADIDAS PROPHERE GREY</h3>
+                  <p class="item_price">2.500.000 VNĐ</p>
+                  <div class="item_button">
+                    <div class="item_icon">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <button class="item_buy" onclick="getDetail('${shoes.id}')">
+                      <a href="./detail.html"> Buy Now </a>
+                    </button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="product_item">
+              <a href="#">
+                <div class="item_image">
+                  <img
+                    class="img_full"
+                    src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgjtFWXEfsWK1xlkb8z0W3RDon_rTvv2zcA&s"
+                    alt=""
+                  />
+                </div>
+                <div class="item_content">
+                  <h3 class="item_title">ADIDAS PROPHERE GREY</h3>
+                  <p class="item_price">2.500.000 VNĐ</p>
+                  <div class="item_button">
+                    <div class="item_icon">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <button class="item_buy">Buy Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="product_item">
+              <a href="#">
+                <div class="item_image">
+                  <img
+                    class="img_full"
+                    src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgjtFWXEfsWK1xlkb8z0W3RDon_rTvv2zcA&s"
+                    alt=""
+                  />
+                </div>
+                <div class="item_content">
+                  <h3 class="item_title">ADIDAS PROPHERE GREY</h3>
+                  <p class="item_price">2.500.000 VNĐ</p>
+                  <div class="item_button">
+                    <div class="item_icon">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <button class="item_buy">Buy Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="product_item">
+              <a href="#">
+                <div class="item_image">
+                  <img
+                    class="img_full"
+                    src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgjtFWXEfsWK1xlkb8z0W3RDon_rTvv2zcA&s"
+                    alt=""
+                  />
+                </div>
+                <div class="item_content">
+                  <h3 class="item_title">ADIDAS PROPHERE GREY</h3>
+                  <p class="item_price">2.500.000 VNĐ</p>
+                  <div class="item_button">
+                    <div class="item_icon">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <button class="item_buy">Buy Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div id="showIU"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
       <div class="container">
-        <div class="product_title">
-          <h2>List Product</h2>
-        </div>
-        <div class="product_content">
-          <div class="product_item">
-            <a href="detail.html">
-              <div class="item_image">
-                <img class="img_full"
-                  src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgjtFWXEfsWK1xlkb8z0W3RDon_rTvv2zcA&s"
-                  alt="" />
-              </div>
-              <div class="item_content">
-                <h3 class="item_title">ADIDAS PROPHERE GREY</h3>
-                <p class="item_price">2.500.000 VNĐ</p>
-                <div class="item_button">
-                  <div class="item_icon">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                  <button class="item_buy" onclick="getDetail('${shoes.id}')">
-                    <a href="./detail.html"> Buy Now </a>
-                  </button>
-                </div>
-              </div>
-            </a>
+        <div class="footer_list">
+          <div class="footer_item">
+            <div class="footer_title">
+              <h3>Get Help</h3>
+            </div>
+            <div class="footer_content">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Nike</a></li>
+                <li><a href="#">Adidas</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="product_item">
-            <a href="#">
-              <div class="item_image">
-                <img class="img_full"
-                  src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgjtFWXEfsWK1xlkb8z0W3RDon_rTvv2zcA&s"
-                  alt="" />
-              </div>
-              <div class="item_content">
-                <h3 class="item_title">ADIDAS PROPHERE GREY</h3>
-                <p class="item_price">2.500.000 VNĐ</p>
-                <div class="item_button">
-                  <div class="item_icon">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                  <button class="item_buy">Buy Now</button>
-                </div>
-              </div>
-            </a>
+          <div class="footer_item">
+            <div class="footer_title">
+              <h3>Support</h3>
+            </div>
+            <div class="footer_content">
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Phone</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="product_item">
-            <a href="#">
-              <div class="item_image">
-                <img class="img_full"
-                  src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgjtFWXEfsWK1xlkb8z0W3RDon_rTvv2zcA&s"
-                  alt="" />
-              </div>
-              <div class="item_content">
-                <h3 class="item_title">ADIDAS PROPHERE GREY</h3>
-                <p class="item_price">2.500.000 VNĐ</p>
-                <div class="item_button">
-                  <div class="item_icon">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                  <button class="item_buy">Buy Now</button>
-                </div>
-              </div>
-            </a>
+          <div class="footer_item">
+            <div class="footer_title">
+              <h3>Register</h3>
+            </div>
+            <div class="footer_content">
+              <ul>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Log In</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="product_item">
-            <a href="#">
-              <div class="item_image">
-                <img class="img_full"
-                  src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgjtFWXEfsWK1xlkb8z0W3RDon_rTvv2zcA&s"
-                  alt="" />
-              </div>
-              <div class="item_content">
-                <h3 class="item_title">ADIDAS PROPHERE GREY</h3>
-                <p class="item_price">2.500.000 VNĐ</p>
-                <div class="item_button">
-                  <div class="item_icon">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                  <button class="item_buy">Buy Now</button>
-                </div>
-              </div>
-            </a>
+          <div class="footer_item">
+            <div class="footer_title">
+              <h3 class="footer_title-social">Connect with Shoe Shop</h3>
+            </div>
+            <div class="footer_content">
+              <ul class="list_social">
+                <li>
+                  <a href="#">
+                    <i class="item_social fa-brands fa-tiktok"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="item_social fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <i class="item_social fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div id="showIU"></div>
         </div>
       </div>
-    </section>
-  </main>
-  <footer>
-    <div class="container">
-      <div class="footer_list">
-        <div class="footer_item">
-          <div class="footer_title">
-            <h3>Get Help</h3>
+    </footer>
+    <!-- Modal Giỏ Hàng -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Giỏ hàng của bạn</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Đóng"
+            ></button>
           </div>
-          <div class="footer_content">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Nike</a></li>
-              <li><a href="#">Adidas</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Size</th>
+                  <th>Số lượng</th>
+                  <th>Giá</th>
+                  <th>Tổng</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cartItems">
+                <!-- Các sản phẩm trong giỏ hàng sẽ được thêm ở đây -->
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-end">
+              <h5>Tổng tiền: <span id="totalPrice">0$</span></h5>
+            </div>
           </div>
-        </div>
-        <div class="footer_item">
-          <div class="footer_title">
-            <h3>Support</h3>
-          </div>
-          <div class="footer_content">
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Phone</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer_item">
-          <div class="footer_title">
-            <h3>Register</h3>
-          </div>
-          <div class="footer_content">
-            <ul>
-              <li><a href="#">Register</a></li>
-              <li><a href="#">Log In</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer_item">
-          <div class="footer_title">
-            <h3 class="footer_title-social">Connect with Shoe Shop</h3>
-          </div>
-          <div class="footer_content">
-            <ul class="list_social">
-              <li>
-                <a href="#">
-                  <i class="item_social fa-brands fa-tiktok"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="item_social fa-brands fa-facebook-f"></i>
-                </a>
-              </li>
-
-              <li>
-                <a href="#">
-                  <i class="item_social fa-brands fa-instagram"></i>
-                </a>
-              </li>
-            </ul>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tiếp tục mua sắm
+            </button>
+            <button type="button" class="btn btn-success">Thanh toán</button>
           </div>
         </div>
       </div>
     </div>
-  </footer>
-  <!-- Modal Giỏ Hàng -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Giỏ hàng của bạn</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Sản phẩm</th>
-                <th>Size</th>
-                <th>Số lượng</th>
-                <th>Giá</th>
-                <th>Tổng</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="cartItems">
-              <!-- Các sản phẩm trong giỏ hàng sẽ được thêm ở đây -->
-            </tbody>
-          </table>
-          <div class="d-flex justify-content-end">
-            <h5>Tổng tiền: <span id="totalPrice">0$</span></h5>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tiếp tục mua sắm</button>
-          <button type="button" class="btn btn-success">Thanh toán</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
-  <!-- cdn axios  -->
-  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-  <script type="module" src="../asset/app/model/main.js"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <!-- cdn axios  -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script type="module" src="../asset/app/model/mainDetail.js"></script>
+    <script type="module" src="../asset/app/model/main.js"></script>
+  </body>
 </html>

@@ -6,8 +6,8 @@
   &_card {
     border-radius: 15px;
     padding: 50px;
-    background-color: rgba($color: $primary, $alpha: 0.2);
-    box-shadow: 0 0 5px 0 rgba($color: $secondary, $alpha: 0.3);
+    background-color: rgba($secondary, 0.5);
+    box-shadow: 0 0 5px 0 rgba($secondary, 0.3);
   }
 
   .register_title {
@@ -39,8 +39,8 @@
         outline: none;
         &:hover,
         &:focus {
-          border-color: $primary;
-          box-shadow: 0 0 5px 0 $primary;
+          border-color: $color-hover;
+          box-shadow: 0 0 5px 0 $secondary;
         }
       }
     }
@@ -115,5 +115,3 @@
     }
   }
 }
-
-//footer

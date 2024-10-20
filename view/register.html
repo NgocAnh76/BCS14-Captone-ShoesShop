@@ -39,7 +39,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <!-- logo  -->
-          <a class="navbar-brand" href="../index.html">Shoes Shop</a>
+          <a class="navbar-brand" href="./shoeShop.html">Shoes Shop</a>
           <!-- toggle  -->
           <button
             class="navbar-toggler"
@@ -53,26 +53,23 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./shoeShop.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./detail.html">Deitail</a>
-              </li>
-            </ul>
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0"></ul>
             <div class="navbar_button">
-              <button class="button_item">
+              <button
+                class="button_item"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#cartModal"
+              >
                 <i class="fa-solid fa-cart-shopping"></i>
-                <span id="number_cart"> (1)</span>
+                <span id="number_cart"> (0)</span>
               </button>
-              <a href="./logIn.html" class="button_item">Log In</a>
-              <a href="./register.html" class="button_item"> Register </a>
+              <a id="btnLogIn" href="./logIn.html" class="button_item"
+                >Log In</a
+              >
+              <a id="btnRegister" href="./register.html" class="button_item">
+                Register
+              </a>
             </div>
           </div>
         </div>
@@ -128,7 +125,13 @@
                     <label for="female" class="radio_label">Female</label>
                   </div>
                 </div>
-                <button class="register_button">Register</button>
+                <button
+                  type="button"
+                  class="register_button"
+                  onclick="postInfor()"
+                >
+                  Register
+                </button>
               </div>
             </div>
           </div>
@@ -203,6 +206,58 @@
         </div>
       </div>
     </footer>
+    <!-- Modal Giỏ Hàng -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Giỏ hàng của bạn</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Đóng"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Size</th>
+                  <th>Số lượng</th>
+                  <th>Giá</th>
+                  <th>Tổng</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cartItems">
+                <!-- Các sản phẩm trong giỏ hàng sẽ được thêm ở đây -->
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-end">
+              <h5>Tổng tiền: <span id="totalPrice">0$</span></h5>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tiếp tục mua sắm
+            </button>
+            <button type="button" class="btn btn-success">Thanh toán</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -218,5 +273,6 @@
     <!-- cdn axios  -->
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script type="module" src="../asset/app/model/mainRegister.js"></script>
+    <script type="module" src="../asset/app/model/mainDetail.js"></script>
   </body>
 </html>

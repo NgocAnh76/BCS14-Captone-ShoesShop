@@ -5,7 +5,10 @@ function showDetail(arr) {
   let contentDetail = "";
   arr.map(function (shoes) {
     let size = shoes.size
-      .map((size) => `<button class="size_item" data-size="${size}">${size}</button>`)
+      .map(
+        (size) =>
+          `<button class="size_item" data-size="${size}">${size}</button>`
+      )
       .join("");
     let shoesDetail = `
     <div class="product_show" data-id="${shoes.id}">
@@ -31,38 +34,40 @@ function showDetail(arr) {
     `;
     contentDetail += shoesDetail;
   });
-  const product_show = document.querySelector(".product_show");
+  const product_show = document.querySelector("#product_show");
   if (product_show) product_show.innerHTML = contentDetail;
 
   // Gán sự kiện cho nút "Add to cart"
-  document.querySelector('.button_add').addEventListener('click', () => {
+  document.querySelector(".button_add").addEventListener("click", () => {
     addProductToCartFromApi();
   });
 
   // Gán sự kiện cho các nút kích thước
-  const sizeButtons = document.querySelectorAll('.size_item');
-  sizeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      sizeButtons.forEach(btn => btn.classList.remove('selected'));
-      button.classList.add('selected');
+  const sizeButtons = document.querySelectorAll(".size_item");
+  sizeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      sizeButtons.forEach((btn) => btn.classList.remove("selected"));
+      button.classList.add("selected");
     });
   });
 
   // Xử lý nút tăng giảm số lượng
-  const increaseBtn = document.querySelector('.increase');
-  const decreaseBtn = document.querySelector('.decrease');
-  const quantityDisplay = document.querySelector('.quantity');
+  const increaseBtn = document.querySelector(".increase");
+  const decreaseBtn = document.querySelector(".decrease");
+  const quantityDisplay = document.querySelector(".quantity");
 
-  increaseBtn.addEventListener('click', () => {
+  increaseBtn.addEventListener("click", () => {
     let currentQuantity = parseInt(quantityDisplay.innerText);
-    if (currentQuantity < 100) { // Giới hạn số lượng tối đa
+    if (currentQuantity < 100) {
+      // Giới hạn số lượng tối đa
       quantityDisplay.innerText = currentQuantity + 1;
     }
   });
 
-  decreaseBtn.addEventListener('click', () => {
+  decreaseBtn.addEventListener("click", () => {
     let currentQuantity = parseInt(quantityDisplay.innerText);
-    if (currentQuantity > 1) { // Giới hạn số lượng tối thiểu
+    if (currentQuantity > 1) {
+      // Giới hạn số lượng tối thiểu
       quantityDisplay.innerText = currentQuantity - 1;
     }
   });
@@ -87,7 +92,7 @@ let cart = [];
 
 // Hàm khôi phục giỏ hàng từ Local Storage
 function loadCart() {
-  const storedCart = localStorage.getItem('cart');
+  const storedCart = localStorage.getItem("cart");
   if (storedCart) {
     cart = JSON.parse(storedCart);
     updateCart(); // Cập nhật giao diện giỏ hàng
@@ -96,11 +101,11 @@ function loadCart() {
 
 // Hàm cập nhật giỏ hàng trên giao diện
 function updateCart() {
-  const cartItems = document.getElementById('cartItems');
-  const totalPriceEl = document.getElementById('totalPrice');
-  const cartCountEl = document.getElementById('number_cart');
+  const cartItems = document.getElementById("cartItems");
+  const totalPriceEl = document.getElementById("totalPrice");
+  const cartCountEl = document.getElementById("number_cart");
 
-  cartItems.innerHTML = ''; // Xóa nội dung cũ
+  cartItems.innerHTML = ""; // Xóa nội dung cũ
   let total = 0;
 
   cart.forEach((item, index) => {
@@ -108,9 +113,13 @@ function updateCart() {
     total += itemTotal;
 
     // Tạo danh sách các kích thước dựa trên sản phẩm từ API
-    const sizeOptions = item.availableSizes.map(size => {
-      return `<option value="${size}" ${size === item.size ? 'selected' : ''}>${size}</option>`;
-    }).join('');
+    const sizeOptions = item.availableSizes
+      .map((size) => {
+        return `<option value="${size}" ${
+          size === item.size ? "selected" : ""
+        }>${size}</option>`;
+      })
+      .join("");
 
     const row = `
       <tr>
@@ -121,7 +130,9 @@ function updateCart() {
           </select>
         </td>
         <td>
-          <input type="number" min="1" value="${item.quantity}" class="form-control quantity" data-index="${index}" />
+          <input type="number" min="1" value="${
+            item.quantity
+          }" class="form-control quantity" data-index="${index}" />
         </td>
         <td>${item.price.toFixed(2)}$</td>
         <td>${itemTotal.toFixed(2)}$</td>
@@ -130,7 +141,7 @@ function updateCart() {
         </td>
       </tr>
     `;
-    cartItems.insertAdjacentHTML('beforeend', row);
+    cartItems.insertAdjacentHTML("beforeend", row);
   });
 
   totalPriceEl.innerText = `${total.toFixed(2)}$`;
@@ -139,7 +150,9 @@ function updateCart() {
 
 // Hàm thêm sản phẩm vào giỏ hàng
 function addToCart(product) {
-  const existingIndex = cart.findIndex(item => item.name === product.name && item.size === product.size);
+  const existingIndex = cart.findIndex(
+    (item) => item.name === product.name && item.size === product.size
+  );
   if (existingIndex !== -1) {
     cart[existingIndex].quantity += product.quantity;
   } else {
@@ -147,16 +160,16 @@ function addToCart(product) {
     product.availableSizes = [32, 33, 34, 35, 36]; // Hoặc lấy từ API nếu có
     cart.push(product);
   }
-  localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật vào Local Storage
+  localStorage.setItem("cart", JSON.stringify(cart)); // Cập nhật vào Local Storage
   updateCart();
 }
 
 // Hàm thêm sản phẩm từ API vào giỏ hàng
 function addProductToCartFromApi() {
-  const productName = document.querySelector('.product_name').innerText;
-  const productPriceText = document.querySelector('.product_price').innerText;
-  const productPrice = parseFloat(productPriceText.replace('$', ''));
-  const quantityEl = document.querySelector('.quantity');
+  const productName = document.querySelector(".product_name").innerText;
+  const productPriceText = document.querySelector(".product_price").innerText;
+  const productPrice = parseFloat(productPriceText.replace("$", ""));
+  const quantityEl = document.querySelector(".quantity");
   let quantity = parseInt(quantityEl.innerText);
 
   if (isNaN(quantity) || quantity < 1) {
@@ -170,66 +183,78 @@ function addProductToCartFromApi() {
     name: productName,
     price: productPrice,
     quantity: quantity,
-    size: selectedSize
+    size: selectedSize,
   };
 
   addToCart(product);
-  alert('Đã thêm sản phẩm vào giỏ hàng!');
+  alert("Đã thêm sản phẩm vào giỏ hàng!");
 }
 
 // Hàm lấy kích thước đã chọn trên trang sản phẩm
 function getSelectedSize() {
-  const sizeButtons = document.querySelectorAll('.size_item');
+  const sizeButtons = document.querySelectorAll(".size_item");
   let selectedSize = 39; // Mặc định
-  sizeButtons.forEach(button => {
-    if (button.classList.contains('selected')) {
-      selectedSize = parseInt(button.getAttribute('data-size'));
+  sizeButtons.forEach((button) => {
+    if (button.classList.contains("selected")) {
+      selectedSize = parseInt(button.getAttribute("data-size"));
     }
   });
   return selectedSize;
 }
 
 // Xử lý thay đổi số lượng trong giỏ hàng
-document.getElementById('cartModal').addEventListener('input', function(e) {
-  if (e.target.classList.contains('quantity')) {
-    const index = e.target.getAttribute('data-index');
+document.getElementById("cartModal").addEventListener("input", function (e) {
+  if (e.target.classList.contains("quantity")) {
+    const index = e.target.getAttribute("data-index");
     const newQuantity = parseInt(e.target.value);
     if (newQuantity > 0) {
       cart[index].quantity = newQuantity;
-      localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật vào localStorage
+      localStorage.setItem("cart", JSON.stringify(cart)); // Cập nhật vào localStorage
       updateCart();
     }
   }
 });
 
 // Xử lý thay đổi kích thước trong giỏ hàng
-document.getElementById('cartModal').addEventListener('change', function(e) {
-  if (e.target.classList.contains('size-select')) {
-    const index = e.target.getAttribute('data-index');
+document.getElementById("cartModal").addEventListener("change", function (e) {
+  if (e.target.classList.contains("size-select")) {
+    const index = e.target.getAttribute("data-index");
     const newSize = parseInt(e.target.value);
     if (cart[index].availableSizes.includes(newSize)) {
       cart[index].size = newSize; // Cập nhật kích thước trong giỏ hàng
-      localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật vào localStorage
+      localStorage.setItem("cart", JSON.stringify(cart)); // Cập nhật vào localStorage
       updateCart();
     }
   }
 });
 
 // Xử lý xóa sản phẩm khỏi giỏ hàng
-document.getElementById('cartModal').addEventListener('click', function(e) {
-  if (e.target.classList.contains('remove-item')) {
-    const index = e.target.getAttribute('data-index');
+document.getElementById("cartModal").addEventListener("click", function (e) {
+  if (e.target.classList.contains("remove-item")) {
+    const index = e.target.getAttribute("data-index");
     cart.splice(index, 1); // Xóa sản phẩm khỏi giỏ hàng
 
     // Cập nhật lại giỏ hàng trong localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     updateCart(); // Cập nhật lại giỏ hàng trên giao diện
-    alert('Sản phẩm đã được xóa khỏi giỏ hàng!'); // Thông báo cho người dùng
+    alert("Sản phẩm đã được xóa khỏi giỏ hàng!"); // Thông báo cho người dùng
   }
 });
 
 // Khởi tạo giỏ hàng khi tải trang
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   loadCart(); // Khôi phục giỏ hàng từ Local Storage
 });
+
+// Kiểm tra trạng thái đăng nhập
+function checkLoginStatus() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const name = localStorage.getItem("name");
+
+  if (isLoggedIn === "true") {
+    document.querySelector("#btnLogIn").style.display = "none";
+    document.querySelector("#btnRegister").textContent = name; // Hiển thị tên người dùng
+  }
+}
+checkLoginStatus();

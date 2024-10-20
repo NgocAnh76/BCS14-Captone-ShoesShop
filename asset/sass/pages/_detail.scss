@@ -1,64 +1,77 @@
 //header
+.card_product {
+  padding: 3rem;
+}
 
 .product_show {
   display: flex;
   align-items: center;
+  padding: 20px;
+  background-color: rgba($secondary, 0.4);
+  box-shadow: 0 0 10px 0 rgba($primary, 0.5);
+
   .product_image {
     width: 45%;
-    padding: 20px;
     text-align: center;
     object-fit: cover;
     .image_full {
       width: 90%;
+      background-color: #ccc;
     }
   }
   .product_infor {
     width: 65%;
     .product_name {
-      @include StyleText($fs-7, $secondary, $fw-bold);
+      @include StyleText($fs-7, $color-text-2, $fw-bold);
+      text-transform: capitalize;
     }
     .product_desc {
       @include StyleText($fs-2, $color-dark-1, $fw-1);
     }
     .product_size {
       .size_title {
-        @include StyleText($fs-4, $secondary, $fw-3);
+        @include StyleText($fs-4, $color-text-2, $fw-3);
+        text-transform: capitalize;
       }
       .size_item {
         background-color: #ccc;
         border: none;
-        @include StyleText($fs-2, $secondary, $fw-3);
+        @include StyleText($fs-2, $color-text-2, $fw-3);
         padding: 5px 10px;
         margin-right: 10px;
-        transition: all 0.3s;
+        transition: all 0.3s linear;
         &:hover,
         &:focus {
           background-color: #5e5e5e;
+          color: $color-text;
         }
       }
     }
     .product_price {
-      @include StyleText($fs-6, $primary, $fw-2);
+      @include StyleText($fs-6, $color-hover, $fw-bold);
     }
     .product_quantity {
       .button_quantity {
-        background-color: $color-blue-4;
+        background-color: #ccc;
         border: none;
-        @include StyleText($fs-3, $secondary, $fw-bold);
+        @include StyleText($fs-3, $color-text-2, $fw-2);
         width: 30px;
         height: 30px;
         line-height: 30px;
+        flex-direction: row;
+        transition: all 0.3s linear;
+
         &:hover {
           background-color: $color-blue-2;
         }
       }
       .quantity {
-        @include StyleText($fs-5, $secondary, $fw-3);
+        @include StyleText($fs-5, $color-text-2, $fw-3);
         margin: 15px;
       }
     }
     .button_add {
-      @include StyleText($fs-4, $secondary, $fw-1);
+      @include StyleText($fs-4, $color-text, $fw-1);
       padding: 5px 15px;
       background-color: $primary;
       border: none;
@@ -77,4 +90,41 @@
   }
 }
 
-//footer
+@media screen and (max-width: 1023px) {
+  .product_show {
+    flex-direction: column;
+    .product_image,
+    .product_infor {
+      width: 100%;
+    }
+    .product_infor {
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .card_product {
+    padding: 0;
+  }
+  .product_show {
+    .product_infor {
+      .product_name {
+        font-size: $fs-6;
+      }
+      .product_desc {
+        font-size: $fs-1;
+      }
+      .product_price {
+        font-size: $fs-3;
+      }
+      .product_size {
+        .size_item {
+          font-size: $fs-1;
+        }
+      }
+      .button_add {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 html,
 body {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   @include StyleText($fs-1, $color-dark-1, $fw-1);
   background-color: $color-white-1;
+  color: #7e7a7a;
 }
