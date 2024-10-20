@@ -7,13 +7,13 @@
   .search_input {
     @include StyleText($fs-3, $primary, $fw-2);
     border-radius: 30px;
-    border: 2px solid $primary;
+    border: 2px solid $secondary;
     transition: all 0.3s linear;
     &:hover {
-      box-shadow: 0 0 5px 5px $primary;
+      box-shadow: 0 0 5px 5px $secondary;
     }
     &:focus {
-      box-shadow: 0 0 5px 5px $primary;
+      box-shadow: 0 0 5px 5px $secondary;
     }
   }
   .button_search {
@@ -27,6 +27,7 @@
     &:hover {
       background-color: $color-hover;
       color: $secondary;
+      box-shadow: 0 0 5px 2px $secondary;
     }
     &:active {
       box-shadow: 0 5px 0 0 #e3cac9;
@@ -48,9 +49,9 @@
 .choes_product {
   .product_title {
     text-align: center;
-    padding: 20px;
+    padding: 50px;
     h2 {
-      @include StyleText($fs-7, $primary, $fw-2);
+      @include StyleText($fs-7, $primary, $fw-bold);
     }
   }
   .product_content {
@@ -62,14 +63,17 @@
     gap: 40px;
   }
   .product_item {
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px 0 rgba($secondary, 0.75);
     display: inline-block;
+    border-radius: 10px;
+    .item_image {
+      transition: all 0.3s linear;
+    }
     .item_image {
       width: 100%;
-      height: auto;
+      border-radius: 10px 10px 0 0;
       object-fit: cover;
     }
-
     .item_content {
       padding: 15px;
     }
@@ -77,13 +81,14 @@
       width: 100%;
     }
     .item_title {
-      @include StyleText($fs-4, $primary, $fw-1);
+      @include StyleText($fs-4, #888, $fw-3);
+      text-transform: capitalize;
     }
     .item_icon {
       color: $color-yellow-1;
     }
     .item_price {
-      @include StyleText($fs-4, $primary, $fw-1);
+      @include StyleText($fs-4, #888, $fw-1);
     }
     .item_button {
       display: flex;
@@ -92,7 +97,7 @@
     .item_buy {
       text-align: center;
       padding: 0 15px;
-      @include StyleText($fs-1, $primary, $fw-1);
+      @include StyleText($fs-1, #888, $fw-1);
       border: none;
       border-radius: 5px;
       text-decoration: none;
@@ -107,15 +112,17 @@
     }
 
     &:hover {
-      background-color: #88888850;
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 5px 2px rgba($secondary, 0.75);
+      .item_image {
+        background-color: #ccc;
+      }
     }
   }
 }
 // footer
 @import "../layout/footer";
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .choes_product {
     .product_item {
       a {
@@ -141,6 +148,21 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+  .product_item {
+    .item_button {
+      flex-direction: column;
+      .item_icon {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+      .item_buy {
+        width: 60%;
+        font-size: 16px;
+        padding: 0;
+        margin-left: 40%;
+      }
+    }
+  }
 }
 @media screen and (max-width: 767px) {
   .carousel {
@@ -157,6 +179,18 @@
         .item_icon {
           font-size: 10px;
         }
+      }
+      .item_title,
+      .item_price {
+        font-size: $fs-2;
+      }
+
+      .item_icon {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      .item_buy {
+        font-size: 12px;
       }
     }
   }

@@ -1,14 +1,14 @@
 .header_shoes {
   .navbar {
-    background-color: $secondary;
+    background-color: $primary;
   }
   .navbar-brand {
-    @include StyleText($fs-6, $primary, $fw-3);
+    @include StyleText($fs-6, white, $fw-3);
   }
   .nav-item {
     .nav-link {
       padding: 0 25px;
-      @include StyleText($fs-4, $primary, $fw-1);
+      @include StyleText($fs-4, white, $fw-1);
       transition: all 0.2s;
       &::after {
         content: "";
@@ -17,8 +17,7 @@
         background-color: $color-hover;
         display: block;
         transition: all 0.3s;
-        //Trước hover
-        // (sacle(1) == 100%)
+
         transform: scaleX(0);
       }
       &:hover {
@@ -45,14 +44,16 @@
       font-size: 16px;
       font-weight: 600;
       color: $secondary;
-      background-color: $primary;
-      color: $secondary;
+      background-color: $secondary;
+      color: $primary;
+      transition: all 0.3s linear;
       &:hover {
         background-color: $color-hover;
+        color: white;
       }
       &:active {
         transform: translateY(5px);
-        box-shadow: 0 0 5px 0 $primary;
+        box-shadow: 0 0 5px 0 $secondary;
       }
     }
   }

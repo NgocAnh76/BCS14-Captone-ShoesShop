@@ -1,8 +1,12 @@
 .login {
   text-align: center;
   margin: 60px;
-  //   &_title {
-  //   }
+  &_card {
+    border-radius: 15px;
+    padding: 50px;
+    background-color: rgba($secondary, 0.5);
+    box-shadow: 0 0 5px 0 rgba($secondary, 0.3);
+  }
   &_item {
     width: 50%;
     margin-top: 20px;
@@ -33,6 +37,7 @@
 }
 @media screen and (max-width: 767px) {
   .login {
+    margin: 0;
     &_item {
       width: 100%;
     }

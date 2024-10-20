@@ -86,6 +86,18 @@ function search() {
       alert("Failed to fetch products.");
     });
 }
+function checkLoginStatus() {
+  // Kiểm tra trạng thái đăng nhập
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const name = localStorage.getItem("name");
+
+  if (isLoggedIn === "true") {
+    document.querySelector("#btnLogIn").style.display = "none";
+    // document.querySelector("#btnRemove").style.display = "inline-block";
+    document.querySelector("#btnRegister").textContent = name; // Hiển thị tên người dùng
+  }
+}
+checkLoginStatus();
 
 // window
 window.search = search;
