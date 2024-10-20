@@ -18,7 +18,7 @@ body {
 }
 
 .home {
-  background-image: url("../../img/bgHome.jpg");
+  background-image: url("https://vemcogroup.com/hubfs/reduc-Store%20Entrance-1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,6 +53,7 @@ body {
   position: absolute;
   border-radius: 80px;
   display: block;
+  z-index: -1;
 }
 .home .home_left .home_image,
 .home .home_right .home_image {
