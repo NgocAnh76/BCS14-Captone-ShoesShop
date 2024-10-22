@@ -1,0 +1,21 @@
+.quantity {
+  width: 30%;
+  &:focus {
+    outline: none;
+    border: 1px solid $color-hover;
+    box-shadow: 0 0 5px 0 $secondary;
+  }
+}
+.form-select {
+  &:focus {
+    outline: none;
+    border: 1px solid $color-hover;
+    box-shadow: 0 0 5px 0 $secondary;
+  }
+}
+.btn-danger {
+  transition: all 0.3s linear;
+  &:active {
+    transform: translateY(3px);
+  }
+}

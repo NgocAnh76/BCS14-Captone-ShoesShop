@@ -1,5 +1,5 @@
 import { getProduct } from "../service/shoesService.js";
-
+import { checkLoginStatus } from "./mainRegister.js";
 // Hiển thị chi tiết sản phẩm
 function showDetail(arr) {
   let contentDetail = "";
@@ -247,14 +247,4 @@ document.addEventListener("DOMContentLoaded", () => {
   loadCart(); // Khôi phục giỏ hàng từ Local Storage
 });
 
-// Kiểm tra trạng thái đăng nhập
-function checkLoginStatus() {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const name = localStorage.getItem("name");
-
-  if (isLoggedIn === "true") {
-    document.querySelector("#btnLogIn").style.display = "none";
-    document.querySelector("#btnRegister").textContent = name; // Hiển thị tên người dùng
-  }
-}
 checkLoginStatus();
