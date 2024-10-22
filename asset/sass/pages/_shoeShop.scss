@@ -2,7 +2,7 @@
 @import "../layout/header";
 
 //search
-.shoe_search {
+.shoes_search {
   margin-top: 30px;
   .search_input {
     @include StyleText($fs-3, $primary, $fw-2);
@@ -119,9 +119,24 @@
     }
   }
 }
+.shoes-service {
+  margin: 50px auto;
+  text-align: center;
+  &_icon {
+    font-size: 50px;
+    color: #1ae490;
+  }
+  &_title {
+    @include StyleText($fs-1, $primary, $fw-3);
+  }
+  &_desc {
+    font-size: 15px;
+  }
+}
 // footer
 @import "../layout/footer";
-
+// cart
+@import "../layout/cart";
 @media screen and (max-width: 1279px) {
   .choes_product {
     .product_item {
@@ -136,7 +151,6 @@
     }
   }
 }
-
 @media screen and (max-width: 1023px) {
   .carousel {
     .carousel-inner {

@@ -23,6 +23,7 @@ function logout() {
   localStorage.removeItem("isLoggedIn");
   window.location.reload(); // Tải lại trang sau khi đăng xuất
 }
+export { logout };
 // loginUser();
 window.loginUser = loginUser;
 window.logout = logout;

@@ -1,6 +1,7 @@
 //import
 import { postRegister } from "../service/shoesService.js";
 import { Client } from "../controllers/client.js";
+import { logout } from "./mainLogin.js";
 function postInfor() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
@@ -35,8 +36,14 @@ function checkLoginStatus() {
 
   if (isLoggedIn === "true") {
     document.querySelector("#btnLogIn").style.display = "none";
-    document.querySelector("#btnRegister").textContent = name; // Hiển thị tên người dùng
+    document.querySelector("#btnRegister").style.display = "none";
+    document.querySelector("#userName").textContent = name;
+    document.querySelector("#userName").style.display = "inline-block";
+    document.querySelector("#btnRemove").style.display = "inline-block";
   }
 }
 checkLoginStatus();
+
+export { checkLoginStatus };
+
 window.postInfor = postInfor;

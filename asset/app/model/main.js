@@ -1,12 +1,12 @@
 // import
 import { getListAPI, getProduct } from "../service/shoesService.js";
-
+import { checkLoginStatus } from "./mainRegister.js";
 // hiển thị UI
 function showUI(arrShoes) {
   let content = "";
   arrShoes.map(function (shoes, index) {
     let shoesItem = `
-    <div class="product_item"">
+    <div class="product_item animate__animated animate__zoomIn wow">
           
               <div class="item_image">
                 <img
@@ -15,7 +15,7 @@ function showUI(arrShoes) {
                   alt=""
                 />
               </div>
-              <div class="item_content">
+              <div class="item_content ">
                 <h3 class="item_title">${shoes.name}</h3>
                 <p class="item_price">${shoes.price.toLocaleString("us-US", {
                   style: "currency",
@@ -85,17 +85,6 @@ function search() {
       console.error("Error fetching products:", error);
       alert("Failed to fetch products.");
     });
-}
-function checkLoginStatus() {
-  // Kiểm tra trạng thái đăng nhập
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const name = localStorage.getItem("name");
-
-  if (isLoggedIn === "true") {
-    document.querySelector("#btnLogIn").style.display = "none";
-    // document.querySelector("#btnRemove").style.display = "inline-block";
-    document.querySelector("#btnRegister").textContent = name; // Hiển thị tên người dùng
-  }
 }
 checkLoginStatus();
 
